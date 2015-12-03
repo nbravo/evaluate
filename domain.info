@@ -1,0 +1,32 @@
+# This is a tcl file setting various quantities for this particular domain
+
+set domain gale_s2
+
+set sls_home $env(SLS_HOME)
+
+source ${sls_home}/tcl/defaults.info
+
+# source sets.info
+
+# How many jobs we can run locally, non polite
+set d:min_memory_mb 8000.0
+
+set d:num_run_local 1
+
+set d:stagger_time 1
+
+set d:sls_priority 10.0
+
+set d:trdir "./results"
+
+# max allowed disagreement w/ transcription, when training
+set d:max_bound_err 0.010
+set d:max_seg_err .100
+
+# for Emacs...
+# Local Variables:
+# mode: tcl
+# fill-column: 96
+# comment-column: 50
+# tcl-indent-level: 2
+# End:
