@@ -1,3 +1,3 @@
-ctl_exec -control recognize.ctl -distributed
-ctl_exec -control recognize2.ctl -distributed
-ctl_exec -control recognize3.ctl -distributed
+python create_recognize_script.py
+run_recognizer.sh
+python parse_results.py
