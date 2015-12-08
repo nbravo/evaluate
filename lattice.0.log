@@ -1,0 +1,13 @@
+# Running on sls-520-1
+# Started at Thu Dec 3 20:53:13 EST 2015
+# lattice.sh 0 
+lattice-add-penalty --word-ins-penalty=0.0 ark:- ark:- 
+lattice-best-path --word-symbol-table=exp/tri3b/graph/words.txt ark:- ark,t:exp/nnet2_online/nnet_a_gpu_online/decode_test/scoring/nbravo-5000-13-5.tra 
+lattice-scale --inv-acoustic-scale=10 'ark:gunzip -c exp/nnet2_online/nnet_a_gpu_online/decode_test/lat.nbravo-5000-13-5.gz|' ark:- 
+LOG (lattice-scale:main():lattice-scale.cc:90) Done 1 lattices.
+LOG (lattice-add-penalty:main():lattice-add-penalty.cc:62) Done adding word insertion penalty to 1 lattices.
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance ALAM_WITHEVENT_ARB_20070116_205800_1006200_1013930, best cost 129.239 + -495.778 = -366.539 over 771 frames.
+ALAM_WITHEVENT_ARB_20070116_205800_1006200_1013930 >stA* smyr >rHb bk mEy fy h*h AlHlqp nbd> mbA$rp mn jwlp wzyrp AlxArjyp Al>mrykyp kwndlyzA rAys <lY AlmnTqp 
+LOG (lattice-best-path:main():lattice-best-path.cc:124) Overall score per frame is -0.475408 = 0.167625 [graph] + -0.643033 [acoustic] over 771 frames.
+LOG (lattice-best-path:main():lattice-best-path.cc:128) Done 1 lattices, failed for 0
+# Finished at Thu Dec 3 20:53:16 EST 2015 with status 0

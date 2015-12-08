@@ -1,0 +1,7 @@
+source 0.txt
+
+online2-wav-nnet2-latgen-faster --online=true --do-endpointing=false --mfcc-config=/data/sls/scratch/nbravo/gstreamer/test/models/arabic/gale/conf/mfcc.conf --endpoint.silence-phones="1:2:3:4:5" --max-active=10000 --beam=10 --lattice-beam=6 --acoustic-scale=0.1 --word-symbol-table=/data/sls/scratch/tuka/gale/kaldi/s5/exp/bw/grapheme/tri3_dnn_smb/graph_pmm_01_LV/words.txt /data/sls/scratch/tuka/gale/kaldi/s5/exp/bw/grapheme/tri3_dnn_smb/final_nnet2.mdl /data/sls/scratch/tuka/gale/kaldi/s5/exp/bw/grapheme/tri3_dnn_smb/graph_pmm_01_LV/HCLG.fst ark:$DATADIR/spk2utt "ark,s,cs:extract-segments scp,p:$DATADIR/wav.scp $DATADIR/segments ark:- |" "ark:|gzip -c > exp/nnet2_online/nnet_a_gpu_online/decode_test/lat.nbravo.gz"
+
+lattice-scale --inv-acoustic-scale=10 "ark:gunzip -c exp/nnet2_online/nnet_a_gpu_online/decode_test/lat.nbravo.gz|" ark:- | lattice-add-penalty --word-ins-penalty=0.0 ark:- ark:- | lattice-best-path --word-symbol-table=/data/sls/scratch/tuka/gale/kaldi/s5/exp/bw/grapheme/tri3_dnn_smb/graph_pmm_01_LV/words.txt ark:- ark,t:exp/nnet2_online/nnet_a_gpu_online/decode_test/scoring/nbravo.tra
+
+cat exp/nnet2_online/nnet_a_gpu_online/decode_test/scoring/nbravo.tra | utils/int2sym.pl -f 2- /data/sls/scratch/tuka/gale/kaldi/s5/exp/bw/grapheme/tri3_dnn_smb/graph_pmm_01_LV/words.txt | sed s:\<UNK\>::g | compute-wer --text --mode=present ark:exp/nnet2_online/nnet_a_gpu_online/decode_test/scoring/test_filt.txt ark,p:- >& exp/nnet2_online/nnet_a_gpu_online/decode_test/wer-nbravo
