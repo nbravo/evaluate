@@ -1,4 +1,0 @@
-MAX_ACTIVE=5000
-BEAM=13
-LATTICE_BEAM=5
-DATADIR=data/test/split30/nbravo

@@ -1,1 +1,0 @@
-      Max Active             Beam     Lattice Beam Real-Time Factor          Latency              WER

@@ -9,9 +9,9 @@ def constructLog(counter):
   return 'recognizer.' + str(counter) + '.log'
 
 def constructWer(MAX_ACTIVE, BEAM, LATTICE_BEAM):
-  return 'exp/nnet2_online/nnet_a_gpu_online/decode_test/wer-nbravo-{max_active}-{beam}-{lattice_beam}'.format(max_active=MAX_ACTIVE, beam=BEAM, lattice_beam=LATTICE_BEAM)
+  return 'exp/nnet2_online/nnet_a_gpu_online/decode_test/wer-nbravo-nutrition-{max_active}-{beam}-{lattice_beam}'.format(max_active=MAX_ACTIVE, beam=BEAM, lattice_beam=LATTICE_BEAM)
 
-MAX_ACTIVE_VALUES = map(str, [4000, 5000])
+MAX_ACTIVE_VALUES = map(str, [3000, 4000, 5000])
 BEAM_VALUES = map(str, [9, 10, 11, 12, 13, 14, 15, 16])
 LATTICE_BEAM_VALUES = map(str, [2, 3, 4, 5, 6])
 
