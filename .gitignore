@@ -2,3 +2,5 @@ exp/*
 data/*
 q/*
 log/*
+log/q/*
+*.chk
