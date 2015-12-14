@@ -1,3 +1,5 @@
+import sys
+
 def extractNumber(s):
   splitLine = s.split(" ")
   for word in splitLine:
@@ -11,9 +13,9 @@ def constructLog(counter):
 def constructWer(MAX_ACTIVE, BEAM, LATTICE_BEAM):
   return 'exp/nnet2_online/nnet_a_gpu_online/decode_test/wer-nbravo-{max_active}-{beam}-{lattice_beam}'.format(max_active=MAX_ACTIVE, beam=BEAM, lattice_beam=LATTICE_BEAM)
 
-MAX_ACTIVE_VALUES = map(str, [4000])
-BEAM_VALUES = map(str, [9])
-LATTICE_BEAM_VALUES = map(str, [2])
+MAX_ACTIVE_VALUES = sys.argv[1].split(" ")
+BEAM_VALUES = sys.argv[2].split(" ")
+LATTICE_BEAM_VALUES = sys.argv[3].split(" ")
 
 with open('results.txt', 'w') as g:
   g.write("{:>16} {:>16} {:>16} {:>16} {:>16} {:>16}\n".format("Max Active", "Beam", "Lattice Beam", "Real-Time Factor", "Latency", "WER"))

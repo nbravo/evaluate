@@ -1,9 +1,13 @@
 CONFIG=$1
 RECOGNIZER=run_recognizer.sh
 
+MAX_ACTIVE_VALUES="4000"
+BEAM_VALUES="9"
+LATTICE_BEAM_VALUES="2"
+
 source path.sh
 
-python utils/create_recognize_script.py $CONFIG > $RECOGNIZER
+python utils/create_recognize_script.py $CONFIG $MAX_ACTIVE_VALUES $BEAM_VALUES $LATTICE_BEAM_VALUES > $RECOGNIZER
 chmod +x $RECOGNIZER
 ./$RECOGNIZER
-python utils/parse_results.py
+python utils/parse_results.py $MAX_ACTIVE_VALUES $BEAM_VALUES $LATTICE_BEAM_VALUES

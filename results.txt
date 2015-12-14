@@ -1,2 +1,2 @@
       Max Active             Beam     Lattice Beam Real-Time Factor          Latency              WER
-            4000                9                2          1.03548         0.274227             0.00
+            4000                9                2          1.03677          0.28426             0.00
