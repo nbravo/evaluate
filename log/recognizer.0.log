@@ -1,57 +1,26 @@
-# Running on sls-520-3
-# Started at Thu Dec 10 21:10:12 EST 2015
-# online_decode.sh 0 conf/nutrition.conf 
-online2-wav-nnet2-latgen-faster --online=true --do-endpointing=false --config=/data/sls/scratch/nbravo/gstreamer/test/models/english/nutrition/nutrition_online_decoding.conf --max-active=4000 --beam=9 --lattice-beam=2 --acoustic-scale=0.1 --word-symbol-table=/data/sls/scratch/nbravo/gstreamer/test/models/english/nutrition/words.txt /data/sls/scratch/nbravo/gstreamer/test/models/english/nutrition/experimental_final.mdl /data/sls/scratch/nbravo/gstreamer/test/models/english/nutrition/HCLG.fst ark:/data/sls/scratch/pricem/kaldi/nutrition/data/test_amt1/split10/10/spk2utt scp,p:/data/sls/scratch/pricem/kaldi/nutrition/data/test_amt1/split10/10/wav.scp 'ark:|gzip -c > /data/sls/scratch/nbravo/kaldi/egs/gale_arabic.complete/s5/exp/nnet2_online/nnet_a_gpu_online/decode_test/lat.nbravo-4000-9-2.gz' 
-APLKN69AD84R8-30845ADoEDSi0zOJr-3807 hi i ate a cool berry muffin with hot chocolate 
-LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:272) Decoded utterance APLKN69AD84R8-30845ADoEDSi0zOJr-3807
-AQHBP1TIENEO8-31268JIMFVqgo4Q80-249 i had a glass of chocolate milk 
-LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:272) Decoded utterance AQHBP1TIENEO8-31268JIMFVqgo4Q80-249
-AQHBP1TIENEO8-31268JIMFVqgo4Q80-263 i 
-LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:272) Decoded utterance AQHBP1TIENEO8-31268JIMFVqgo4Q80-263
-AQHBP1TIENEO8-31268LBDmaDh8HB9s-513 one bowl of kellogg's frosted flakes with whole milk 
-LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:272) Decoded utterance AQHBP1TIENEO8-31268LBDmaDh8HB9s-513
-AQHBP1TIENEO8-31268TmNzMV1OYbE8-564 for a snack i had double stuffed meat biscuit oreos 
-LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:272) Decoded utterance AQHBP1TIENEO8-31268TmNzMV1OYbE8-564
-AQHBP1TIENEO8-31268VoJFnpYhuuqC-180 i had a cold slice of dominoes 
-LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:272) Decoded utterance AQHBP1TIENEO8-31268VoJFnpYhuuqC-180
-AQHBP1TIENEO8-31268VoJFnpYhuuqC-192 two grilled chicken thighs two tortillas ketchup lettuce and water 
-LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:272) Decoded utterance AQHBP1TIENEO8-31268VoJFnpYhuuqC-192
-AQHBP1TIENEO8-31268aPQ681G29Aw5-568 i had five ounces of salted peanuts 
-LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:272) Decoded utterance AQHBP1TIENEO8-31268aPQ681G29Aw5-568
-AQHBP1TIENEO8-31268aPQ681G29Aw5-572 last night i had homemade of the can lasagna 
-LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:272) Decoded utterance AQHBP1TIENEO8-31268aPQ681G29Aw5-572
-AQHBP1TIENEO8-31268aPQ681G29Aw5-602 i had a bowl of lucky charms cereal 
-LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:272) Decoded utterance AQHBP1TIENEO8-31268aPQ681G29Aw5-602
-AQHBP1TIENEO8-31268g9b2eM7cfuJd-367 i had raw sugar snap peas with hummus 
-LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:272) Decoded utterance AQHBP1TIENEO8-31268g9b2eM7cfuJd-367
-AQHBP1TIENEO8-31268p19Flvtk4O2M-53 with a side of homestyle instant mashed potatoes 
-LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:272) Decoded utterance AQHBP1TIENEO8-31268p19Flvtk4O2M-53
-AQHBP1TIENEO8-31268rA22eWOFPN3L-382 i today i had homemade taco salad for lunch 
-LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:272) Decoded utterance AQHBP1TIENEO8-31268rA22eWOFPN3L-382
-AVOF14300525D-31268rvnS6XVGmtoH-137 i had roasted asparagus for a snack today 
-LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:272) Decoded utterance AVOF14300525D-31268rvnS6XVGmtoH-137
-AVOF14300525D-31268rvnS6XVGmtoH-139 it was full of vegetables and a little chicken 
-LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:272) Decoded utterance AVOF14300525D-31268rvnS6XVGmtoH-139
-AWVU81A52L2LE-30845HT1QRVUw5BKi-1519 i had one banana 
-LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:272) Decoded utterance AWVU81A52L2LE-30845HT1QRVUw5BKi-1519
-AWVU81A52L2LE-30845HT1QRVUw5BKi-1525 i had a banana and eight string cheese 
-LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:272) Decoded utterance AWVU81A52L2LE-30845HT1QRVUw5BKi-1525
-AWVU81A52L2LE-30845KCIMUrl4Ee3W-1237 for breakfast i ate two homemade pancakes 
-LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:272) Decoded utterance AWVU81A52L2LE-30845KCIMUrl4Ee3W-1237
-AWVU81A52L2LE-30845OSkIPy567rPx-1091 i had some water 
-LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:272) Decoded utterance AWVU81A52L2LE-30845OSkIPy567rPx-1091
-AWVU81A52L2LE-30845oPmjhTiG8TcV-1345 i drank water with lemon 
-LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:272) Decoded utterance AWVU81A52L2LE-30845oPmjhTiG8TcV-1345
-AWVU81A52L2LE-30845oggWcTkvcyBE-996 i had a mozzarella string cheese and two clementines 
-LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:272) Decoded utterance AWVU81A52L2LE-30845oggWcTkvcyBE-996
-AYDDIDXTRHXZ5-30845ah3D7n0MBzhR-1570 i had a bowl of cereal 
-LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:272) Decoded utterance AYDDIDXTRHXZ5-30845ah3D7n0MBzhR-1570
-AYDDIDXTRHXZ5-30845mCckWnx1COY2-1548 i had two cups of white rice with butter 
-LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:272) Decoded utterance AYDDIDXTRHXZ5-30845mCckWnx1COY2-1548
-LOG (online2-wav-nnet2-latgen-faster:Print():online-timing.cc:36) Timing stats: real-time factor was 1.00738 (note: this cannot be less than one.)
-LOG (online2-wav-nnet2-latgen-faster:Print():online-timing.cc:38) Average delay was 0.0344445 seconds.
-LOG (online2-wav-nnet2-latgen-faster:Print():online-timing.cc:42) Percentage of time spent idling was 89.2974
-LOG (online2-wav-nnet2-latgen-faster:Print():online-timing.cc:44) Longest delay was 0.066613 seconds for utterance 'APLKN69AD84R8-30845ADoEDSi0zOJr-3807'
-LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:278) Decoded 23 utterances, 0 with errors.
-LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:280) Overall likelihood per frame was 0.24986 per frame over 10686 frames.
-# Finished at Thu Dec 10 21:10:28 EST 2015 with status 0
+# Running on sls-520-4
+# Started at Sun Dec 13 23:19:59 EST 2015
+# decode_and_evaluate.sh 0 conf/gale.conf 
+online2-wav-nnet2-latgen-faster --online=true --do-endpointing=false --config=/data/sls/scratch/nbravo/kaldi/egs/gale_arabic.complete/s5/exp/nnet2_online/nnet_a_gpu_online/conf/online_nnet2_decoding.conf --max-active=4000 --beam=9 --lattice-beam=2 --acoustic-scale=0.1 --word-symbol-table=/data/sls/scratch/nbravo/kaldi/egs/gale_arabic.complete/s5/exp/tri3b/graph/words.txt /data/sls/scratch/nbravo/kaldi/egs/gale_arabic.complete/s5/exp/nnet2_online/nnet_a_gpu_online/final.mdl /data/sls/scratch/nbravo/kaldi/egs/gale_arabic.complete/s5/exp/tri3b/graph/HCLG.fst ark:/data/sls/scratch/nbravo/kaldi/egs/gale_arabic.complete/s5/data/test/split30/nbravo/spk2utt 'ark,s,cs:extract-segments scp,p:/data/sls/scratch/nbravo/kaldi/egs/gale_arabic.complete/s5/data/test/split30/nbravo/wav.scp /data/sls/scratch/nbravo/kaldi/egs/gale_arabic.complete/s5/data/test/split30/nbravo/segments ark:- |' 'ark:|gzip -c > /data/sls/scratch/nbravo/kaldi/egs/gale_arabic.complete/s5/exp/nnet2_online/nnet_a_gpu_online/decode_test/lat.nbravo-4000-9-2.gz' 
+LOG (online2-wav-nnet2-latgen-faster:ComputeDerivedVars():ivector-extractor.cc:183) Computing derived variables for iVector extractor
+LOG (online2-wav-nnet2-latgen-faster:ComputeDerivedVars():ivector-extractor.cc:204) Done.
+extract-segments scp,p:/data/sls/scratch/nbravo/kaldi/egs/gale_arabic.complete/s5/data/test/split30/nbravo/wav.scp /data/sls/scratch/nbravo/kaldi/egs/gale_arabic.complete/s5/data/test/split30/nbravo/segments ark:- 
+LOG (extract-segments:main():extract-segments.cc:195) Successfully processed 1 lines out of 1 in the segments file. 
+ALAM_WITHEVENT_ARB_20070116_205800_1006200_1013930 >stA* mnyr >rHb bk mEy fy h*h AlHlqp nbd> mbA$rp mn jwlp wzyrp AlxArjyp Al>mrykyp kwndlyzA rAys <lY AlmnTqp 
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:272) Decoded utterance ALAM_WITHEVENT_ARB_20070116_205800_1006200_1013930
+LOG (online2-wav-nnet2-latgen-faster:Print():online-timing.cc:36) Timing stats: real-time factor was 1.03548 (note: this cannot be less than one.)
+LOG (online2-wav-nnet2-latgen-faster:Print():online-timing.cc:38) Average delay was 0.274227 seconds.
+LOG (online2-wav-nnet2-latgen-faster:Print():online-timing.cc:42) Percentage of time spent idling was 52.6005
+LOG (online2-wav-nnet2-latgen-faster:Print():online-timing.cc:44) Longest delay was 0.274227 seconds for utterance 'ALAM_WITHEVENT_ARB_20070116_205800_1006200_1013930'
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:278) Decoded 1 utterances, 0 with errors.
+LOG (online2-wav-nnet2-latgen-faster:main():online2-wav-nnet2-latgen-faster.cc:280) Overall likelihood per frame was 0.474309 per frame over 771 frames.
+lattice-add-penalty --word-ins-penalty=0.0 ark:- ark:- 
+lattice-scale --inv-acoustic-scale=10 'ark:gunzip -c /data/sls/scratch/nbravo/kaldi/egs/gale_arabic.complete/s5/exp/nnet2_online/nnet_a_gpu_online/decode_test/lat.nbravo-4000-9-2.gz|' ark:- 
+lattice-best-path --word-symbol-table=/data/sls/scratch/nbravo/kaldi/egs/gale_arabic.complete/s5/exp/tri3b/graph/words.txt ark:- ark,t:/data/sls/scratch/nbravo/kaldi/egs/gale_arabic.complete/s5/exp/nnet2_online/nnet_a_gpu_online/decode_test/nbravo-4000-9-2.tra 
+LOG (lattice-scale:main():lattice-scale.cc:90) Done 1 lattices.
+LOG (lattice-add-penalty:main():lattice-add-penalty.cc:62) Done adding word insertion penalty to 1 lattices.
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance ALAM_WITHEVENT_ARB_20070116_205800_1006200_1013930, best cost 142.976 + -508.669 = -365.692 over 771 frames.
+ALAM_WITHEVENT_ARB_20070116_205800_1006200_1013930 >stA* mnyr >rHb bk mEy fy h*h AlHlqp nbd> mbA$rp mn jwlp wzyrp AlxArjyp Al>mrykyp kwndlyzA rAys <lY AlmnTqp 
+LOG (lattice-best-path:main():lattice-best-path.cc:124) Overall score per frame is -0.474309 = 0.185443 [graph] + -0.659752 [acoustic] over 771 frames.
+LOG (lattice-best-path:main():lattice-best-path.cc:128) Done 1 lattices, failed for 0
+# Finished at Sun Dec 13 23:20:30 EST 2015 with status 0

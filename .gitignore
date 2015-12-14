@@ -4,3 +4,4 @@ q/*
 log/*
 log/q/*
 *.chk
+variable_files/*
