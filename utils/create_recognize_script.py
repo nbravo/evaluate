@@ -1,3 +1,5 @@
+""" This entire script is a somewhat ugly hack. We want to use host dispatch to run the same command in different jobs but with different arguments for each job. However, each the commands for each job can only be differentiated by their job number. This script takes each combination of parameters and writes their values to special files named according to their job number. I.e., it creates a file named '0.txt' containing the values of the parameters for the first job. Each job then sources the appropriate variable file and runs using the values in that file."""
+
 import sys
 
 if __name__ == "__main__":

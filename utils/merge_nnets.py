@@ -1,3 +1,6 @@
+""" Merges two nnets which have already been concatenated into a single file. The merge process consists of removing some of the closing tags of the first nnet and the opening tags of the second nnet. Also, the number of components is updated to be the sum of the number of components in each of the two original nnets.
+"""
+
 import re
 
 s = ""

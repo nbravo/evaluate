@@ -1,11 +1,10 @@
 CONFIG=$1
 RECOGNIZER=run_recognizer.sh
 
-MAX_ACTIVE_VALUES="4000"
-BEAM_VALUES="9"
+# The following three values should be space-separated strings. A python script will split these strings and treat them as python lists.
+MAX_ACTIVE_VALUES="4000 5000"
+BEAM_VALUES="9 10 11"
 LATTICE_BEAM_VALUES="2"
-
-source path.sh
 
 python utils/create_recognize_script.py $CONFIG $MAX_ACTIVE_VALUES $BEAM_VALUES $LATTICE_BEAM_VALUES > $RECOGNIZER
 chmod +x $RECOGNIZER
