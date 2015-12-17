@@ -1,7 +1,7 @@
-exp/*
-data/*
-q/*
-log/*
-log/q/*
+exp/
+data/
+q/
+log/
+log/q/
 *.chk
-variable_files/*
+variable_files/

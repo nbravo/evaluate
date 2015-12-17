@@ -1,21 +1,28 @@
+"""
+This script extracts the WER and timing info from the files created during the process of decoding and evaluation.
+"""
 import sys
 
-def extractNumber(s):
-  splitLine = s.split(" ")
+"""
+Given a line in a file, returns the first number found in the line
+"""
+def extractNumber(line):
+  splitLine = line.split()
   for word in splitLine:
     if word.replace(".", "").isdigit():
       return word
   return ""
 
-def constructLog(counter):
+def constructLogName(counter):
   return 'log/recognizer.' + str(counter) + '.log'
 
-def constructWer(MAX_ACTIVE, BEAM, LATTICE_BEAM):
-  return 'exp/nnet2_online/nnet_a_gpu_online/decode_test/wer-nbravo-{max_active}-{beam}-{lattice_beam}'.format(max_active=MAX_ACTIVE, beam=BEAM, lattice_beam=LATTICE_BEAM)
+def constructWerName(MAX_ACTIVE, BEAM, LATTICE_BEAM):
+  return '{outdir}/wer-{max_active}-{beam}-{lattice_beam}'.format(max_active=MAX_ACTIVE, beam=BEAM, lattice_beam=LATTICE_BEAM, outdir=OUT_DIR)
 
 MAX_ACTIVE_VALUES = sys.argv[1].split(" ")
 BEAM_VALUES = sys.argv[2].split(" ")
 LATTICE_BEAM_VALUES = sys.argv[3].split(" ")
+OUT_DIR = sys.argv[4]
 
 with open('results.txt', 'w') as g:
   g.write("{:>16} {:>16} {:>16} {:>16} {:>16} {:>16}\n".format("Max Active", "Beam", "Lattice Beam", "Real-Time Factor", "Latency", "WER"))
@@ -28,13 +35,13 @@ with open('results.txt', 'w') as g:
         latency = None
         wer = None
 
-        with open(constructLog(counter), 'r') as f:
+        with open(constructLogName(counter), 'r') as f:
           for line in f:
             if "real-time factor" in line:
               rtf = extractNumber(line)
             if "Average delay" in line:
               latency = extractNumber(line)
-        with open(constructWer(MAX_ACTIVE, BEAM, LATTICE_BEAM), 'r') as f:
+        with open(constructWerName(MAX_ACTIVE, BEAM, LATTICE_BEAM), 'r') as f:
           for line in f:
             if "WER" in line:
               wer = extractNumber(line)
