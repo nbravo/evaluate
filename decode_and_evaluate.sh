@@ -1,3 +1,11 @@
+# This is where all of the decoding and evaluating actually takes place.
+# Unfortunately, the online2-wav-nnet2-latget-faster command takes
+# different arguments depending on whether we are segmenting the audio
+# (as in the arabic decoder) or not (as in the nutrition decoder). This
+# is solved by creating an array of arguments to pass to the command. The
+# array is populated with the appropriate arguments and then passed to the
+# online2-wav-nnet2-latgen-faster command.
+
 source "variable_files/$1.txt"
 source "$2"
 
