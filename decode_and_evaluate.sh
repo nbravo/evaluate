@@ -6,11 +6,10 @@
 # array is populated with the appropriate arguments and then passed to the
 # online2-wav-nnet2-latgen-faster command.
 
-echo "variable_files/$1.txt"
-echo "$2"
-source "variable_files/$1.txt"
-source "$2"
+source "variable_files/$1.txt" # Contains the max_active, beam, and lattice_beam values
+source "$2" # Contains the configuration file with transition model and such
 
+# Construct the array of arguments
 online_args=()
 online_args+=( "$TRANSITION_MODEL" )
 online_args+=( "$FST" )
@@ -22,6 +21,7 @@ else
 fi
 online_args+=( "ark:|gzip -c > $OUTDIR/lat.$MAX_ACTIVE-$BEAM-$LATTICE_BEAM.gz" )
 
+# Using the array created above, run the decoder and evaluate the results.
 online2-wav-nnet2-latgen-faster --online=true --do-endpointing=false --config=$CONFIG --max-active=$MAX_ACTIVE --beam=$BEAM --lattice-beam=$LATTICE_BEAM --acoustic-scale=0.1 --word-symbol-table=$WORD_SYMBOL_TABLE "${online_args[@]}"
 
 lattice-scale --inv-acoustic-scale=10 "ark:gunzip -c $OUTDIR/lat.$MAX_ACTIVE-$BEAM-$LATTICE_BEAM.gz|" ark:- | lattice-add-penalty --word-ins-penalty=0.0 ark:- ark:- | lattice-best-path --word-symbol-table=$WORD_SYMBOL_TABLE ark:- ark,t:$OUTDIR/$MAX_ACTIVE-$BEAM-$LATTICE_BEAM.tra
