@@ -11,7 +11,7 @@ Command-Line Decoding
 
 Decoding and Evaluating
 ------------
-The main script is `recognize.sh`, which decodes audio and evaluates the results for a given decoder setup. The point of this script is to use host dispatch to run multiple different jobs in parallel, where each job runs with different values for the arguments passed to the online recognizer. It is currently written to accept multiple different values for the `--max_active`, `--lattice_beam`, and `--beam` parameters, but hopefully the idea extend to other parameters as well. This script takes a configuration file as an argument and outputs the results of decoding into a file called `results.txt`. For example, to run the arabic decoder you would use:
+The main script is `recognize.sh`, which decodes audio and evaluates the results for a given decoder setup. The point of this script is to use host dispatch to run multiple different jobs in parallel, where each job runs with different values for the arguments passed to the online recognizer. It is currently written to accept multiple different values for the `--max_active`, `--lattice_beam`, and `--beam` parameters, but hopefully the idea should extend to other parameters as well. This script takes a configuration file as an argument and outputs the results of decoding into a file called `results.txt`. For example, to run the arabic decoder you would use:
 
     ./recognize.sh conf/gale.conf
 
@@ -20,7 +20,7 @@ If you have no interest in running multiple jobs and instead want to run a singl
 
 Web-based Decoding
 ------------
-In addition to the command-line utilities provided above, there is also a web-based decoder. The web-based decoder integrates with the Gstreamer plugin for Kaldi.
+In addition to the command-line decoding utilities provided above, there is also a web-based decoder. The web-based decoder integrates with the Gstreamer plugin for Kaldi.
 
 For detailed information on getting that set up, see
 https://github.com/alumae/kaldi-gstreamer-server
