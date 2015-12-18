@@ -11,7 +11,7 @@ EOF
 ret=$?
 echo '#' Finished at `date` with status $ret >>log/recognizer.$1.log
 [ $ret -eq 137 ] && exit 100;
-touch log/q/done.26063.$SGE_TASK_ID
+touch log/q/done.14588.$SGE_TASK_ID
 exit $[$ret ? 1 : 0]
 ## submitted with:
 # 
